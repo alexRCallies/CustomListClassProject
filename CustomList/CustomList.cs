@@ -24,7 +24,30 @@ namespace CustomList
                 return capacity;
             }
         }
-        public T[] customLists;
+        private T[] customLists;
+        public T this[int index]
+        {
+            get 
+            { 
+                return customLists[index]; 
+            }
+            set 
+            {
+                if(value.Equals(default(T)))
+                {
+                    try
+                    {
+                        CheckIndex(-1);
+                    }
+                    catch(IndexOutOfRangeException)
+                    {
+                        Console.WriteLine("Index is out of range please try again");
+                    }
+                }
+                customLists[index] = value; 
+            }
+        }
+        public int index;
         public T[] tempArray;
         public CustomList()
         {
@@ -37,12 +60,12 @@ namespace CustomList
             count++;
             if(count == capacity)
             {
-                IncreaseCount();
+                IncreaseCapacity();
             }
         }
-        public void IncreaseCount()
+        public void IncreaseCapacity()
         {
-            capacity *= 2;
+            capacity = capacity*2;
             tempArray = new T[capacity];
             customLists = tempArray;
             tempArray = customLists;
@@ -58,13 +81,29 @@ namespace CustomList
                         customLists[j] = customLists[j + 1];
                         if(customLists[j+1].Equals(default(T)))
                         {
+                            count--;
                             break;
                         }
                     }
                     break;
                 }
            }
-            count--;
+        }
+        //public void DecreaseIndex();
+        public void CheckIndex(int index1)
+        {
+            
+            if(customLists[index1].Equals(default(T)))
+            {
+                try
+                {
+                    CheckIndex(-1);
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Console.WriteLine("Index Out Of Range");
+                }
+            }
         }
     }
 }

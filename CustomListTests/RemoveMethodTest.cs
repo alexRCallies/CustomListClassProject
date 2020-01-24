@@ -20,7 +20,7 @@ namespace CustomListTests
             customList.CustomAdd(value);
             customList.CustomAdd(expected);
             customList.CustomRemove(value);
-            actual = customList.customLists[0];
+            actual = customList[0];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -36,7 +36,7 @@ namespace CustomListTests
             customList.CustomAdd(expected);
             customList.CustomAdd(secondValue);
             customList.CustomRemove(secondValue);
-            actual = customList.customLists[0];
+            actual = customList[0];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -54,7 +54,7 @@ namespace CustomListTests
             customList.CustomAdd(secondValue);
             customList.CustomAdd(expected);
             customList.CustomRemove(secondValue);
-            actual = customList.customLists[1];
+            actual = customList[1];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -65,14 +65,14 @@ namespace CustomListTests
             CustomList<int> customList = new CustomList<int>();
             int value = 3;
             int secondValue = 4;
-            int expected = value;
+            int expected = 3;
             int actual;
             //Act
             customList.CustomAdd(value);
             customList.CustomAdd(secondValue);
             customList.CustomAdd(value);
             customList.CustomRemove(value);
-            actual = customList.customLists[1];
+            actual = customList[1];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -110,21 +110,24 @@ namespace CustomListTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void CustomListRemoveMethodCheckIndexOutOfRangeError()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            int firstValue = 1;
+            int secondValue = 2;
+            int thirdValue = 3;
+            //Act
+            customList.CustomAdd(firstValue);
+            customList.CustomAdd(secondValue);
+            customList.CustomAdd(thirdValue);
+            customList.CustomRemove(thirdValue);
+            customList.CustomRemove(secondValue);
+            customList.CustomRemove(firstValue);
+            customList.CheckIndex(0);    
+            //Assert
+        }
     }
 }

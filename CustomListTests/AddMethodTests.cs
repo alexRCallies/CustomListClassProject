@@ -15,9 +15,9 @@ namespace CustomListTests
             int actual;
             //Act
             customList.CustomAdd(expected);
-            actual = customList.customLists[0];
+            actual = customList[0];
             //Assert
-            Assert.AreEqual(expected, customList.customLists[0]);
+            Assert.AreEqual(expected, customList[0]);
         }
         [TestMethod]
         public void CustomListAddMethodCheckIndexAfter0()
@@ -30,7 +30,7 @@ namespace CustomListTests
             //Act
             customList.CustomAdd(value);
             customList.CustomAdd(expected);
-            actual = customList.customLists[1];
+            actual = customList[1];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -45,7 +45,7 @@ namespace CustomListTests
             //Act
             customList.CustomAdd(expected);
             customList.CustomAdd(secondValue);
-            actual = customList.customLists[0];
+            actual = customList[0];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -89,6 +89,8 @@ namespace CustomListTests
             int thirdValue = 6;
             int fourthValue = 1;
             int fifthValue = 10;
+            int sixthValue = 43;
+            int seventhValue = 100;
             int expected = 8;
             int actual;
             //Act
@@ -97,6 +99,8 @@ namespace CustomListTests
             customList.CustomAdd(thirdValue);
             customList.CustomAdd(fourthValue);
             customList.CustomAdd(fifthValue);
+            customList.CustomAdd(sixthValue);
+            customList.CustomAdd(seventhValue);
             actual = customList.Capacity;
             //Assert
             Assert.AreEqual(expected, actual);
@@ -120,7 +124,7 @@ namespace CustomListTests
             customList.CustomAdd(fourthValue);
             customList.CustomAdd(fifthValue);
             customList.CustomAdd(expected);
-            actual = customList.customLists[5];
+            actual = customList[5];
             //Assert
             Assert.AreEqual(expected, actual);
         }
