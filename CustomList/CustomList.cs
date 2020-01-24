@@ -47,5 +47,24 @@ namespace CustomList
             customLists = tempArray;
             tempArray = customLists;
         }
+        public void CustomRemove(T value)
+        {
+           for(int i = 0; i < count; i++)
+           {
+                if (customLists[i].Equals(value))
+                {
+                    for(int j = i; j < count; j++)
+                    {
+                        customLists[j] = customLists[j + 1];
+                        if(customLists[j+1].Equals(default(T)))
+                        {
+                            break;
+                        }
+                    }
+                    break;
+                }
+           }
+            count--;
+        }
     }
 }
