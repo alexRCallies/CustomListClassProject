@@ -16,7 +16,7 @@ namespace CustomList
                 return count;
             }
         }
-        private int capacity = 1;
+        private int capacity = 4;
         public int Capacity
         {
             get
@@ -25,16 +25,27 @@ namespace CustomList
             }
         }
         public T[] customLists;
+        public T[] tempArray;
         public CustomList()
         {
-            this.customLists = new T[4];
+            this.customLists = new T[capacity];
         }
 
         public void CustomAdd(T value)
         {
             customLists[Count] = value;
             count++;
-           
+            if(count == capacity)
+            {
+                IncreaseCount();
+            }
+        }
+        public void IncreaseCount()
+        {
+            capacity *= 2;
+            tempArray = new T[capacity];
+            customLists = tempArray;
+            tempArray = customLists;
         }
     }
 }
