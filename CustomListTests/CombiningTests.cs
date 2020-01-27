@@ -2,10 +2,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomList;
 
-namespace CustomListsTests
+namespace CustomListTests
 {
     [TestClass]
-    public class CombiningLists
+    public class CombiningMethodTests
     {
         [TestMethod]
         public void CombiningListTest()
@@ -19,7 +19,7 @@ namespace CustomListsTests
             int firstValue1 = 2;
             int secondValue1 = 4;
             int thirdValue1 = 6;
-
+            
             
 
             //Act

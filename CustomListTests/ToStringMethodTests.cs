@@ -18,7 +18,7 @@ namespace CustomListTests
             //Act
             customList.CustomAdd(firstValue);
 
-            actual = customList.CustomString(0);
+            actual = customList.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -29,30 +29,33 @@ namespace CustomListTests
             CustomList<int> customList = new CustomList<int>();
             int firstValue = 2;
             int secondValue = 21;
-            string expeceted = "21";
+            string expeceted = "221";
             string actual;
             //Act
             customList.CustomAdd(firstValue);
             customList.CustomAdd(secondValue);
-            actual = customList.CustomString(1);
+            actual = customList.ToString();
             //Assert
             Assert.AreEqual(expeceted, actual);
         }
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void CustomStringMethodCheckingOutOfBoundsIndex()
+        public void CustomStringMethodStartingStringEndingConjoinedStrings()
         {
             //Arrange
-            CustomList<int> customList = new CustomList<int>();
-            int firstValue = 32;
-            int SecondValue = 4;
-            int thirdValue = 3;
-
+            CustomList<string> customList = new CustomList<string>();
+            string firstValues = "12";
+            string secondValue = "Washongton";
+            string thirdValue = "42cUps";
+           
+            string expected = "12Washongton42cUps";
+            string actual;
             //Act
-            customList.CustomAdd(firstValue);
-            customList.CustomAdd(SecondValue);
+            customList.CustomAdd(firstValues);
+            customList.CustomAdd(secondValue);
             customList.CustomAdd(thirdValue);
-            customList.CustomString(5);
+            actual = customList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
