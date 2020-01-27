@@ -25,6 +25,8 @@ namespace CustomList
             }
         }
         private T[] customLists;
+     
+        
         public T this[int index]
         {
             get 
@@ -48,10 +50,12 @@ namespace CustomList
             }
         }
         public int index;
-        public T[] tempArray;
+        private T[] tempArray;
+        private string[] stringList; 
+        
         public CustomList()
         {
-            this.customLists = new T[capacity];
+            customLists = new T[capacity];
         }
 
         public void CustomAdd(T value)
@@ -104,6 +108,10 @@ namespace CustomList
                     Console.WriteLine("Index Out Of Range");
                 }
             }
+        }
+        public string CustomString(int index)
+        {
+            return customLists[index].ToString();
         }
     }
 }
