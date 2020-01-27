@@ -38,14 +38,14 @@ namespace CustomList
             {
                 if (value.Equals(default(T)))
                 {
-                    try
-                    {
+                    //try
+                   // {
                         CheckIndex(-1);
-                    }
-                    catch (IndexOutOfRangeException)
-                    {
-                        Console.WriteLine("Index is out of range please try again");
-                    }
+                    //}
+                   // catch (IndexOutOfRangeException)
+                   // {
+                   //     Console.WriteLine("Index is out of range please try again");
+                   // }
                 }
                 customLists[index] = value;
             }
@@ -72,8 +72,15 @@ namespace CustomList
         {
             capacity = capacity * 2;
             tempArray = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                tempArray[i] = customLists[i];
+            }
             customLists = tempArray;
-            tempArray = customLists;
+            //for (int i = 0; i < count; i++)
+            //{
+            //    a.CustomAdd(c[i]);
+            //}
         }
         public void CustomRemove(T value)
         {
@@ -99,16 +106,16 @@ namespace CustomList
         {
 
             if (customLists[index1].Equals(default(T)))
-            {
-                try
-                {
+            //{
+            //    try
+            //    {
                     CheckIndex(-1);
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    Console.WriteLine("Index Out Of Range");
-                }
-            }
+            //    }
+            //    catch (IndexOutOfRangeException)
+            //    {
+            //        Console.WriteLine("Index Out Of Range");
+            //    }
+            //}
         }
         public IEnumerator GetEnumerator()
         {
@@ -129,6 +136,19 @@ namespace CustomList
             }
             value = stringBuilder.ToString();
             return value;
+        }
+       public static CustomList<T> operator + (CustomList<T> b, CustomList<T> c)
+        {
+            CustomList<T> a = new CustomList<T>();
+            for(int i = 0; i < b.count; i++)
+            {
+                a.CustomAdd(b[i]);
+            }
+            for(int i = 0; i < c.count; i++)
+            {
+                a.CustomAdd(c[i]);
+            }
+            return a;
         }
     }
 }
