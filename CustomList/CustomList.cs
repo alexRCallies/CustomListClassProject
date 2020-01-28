@@ -157,7 +157,7 @@ namespace CustomList
             {
                 a.CustomAdd(b[i]);
             }
-            for (int i = 0; i < b.count; i++)
+            for (int i = 0; i < c.count; i++)
             {
                 a.CustomRemove(c[i]);
             }
