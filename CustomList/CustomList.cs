@@ -38,14 +38,14 @@ namespace CustomList
             {
                 if (value.Equals(default(T)))
                 {
-                    //try
-                    // {
-                    CheckIndex(-1);
-                    //}
-                    // catch (IndexOutOfRangeException)
-                    // {
-                    //     Console.WriteLine("Index is out of range please try again");
-                    // }
+                    try
+                    {
+                        CheckIndex(-1);
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        Console.WriteLine("Index is out of range please try again");
+                    }
                 }
                 customLists[index] = value;
             }
@@ -77,10 +77,6 @@ namespace CustomList
                 tempArray[i] = customLists[i];
             }
             customLists = tempArray;
-            //for (int i = 0; i < count; i++)
-            //{
-            //    a.CustomAdd(c[i]);
-            //}
         }
         public void CustomRemove(T value)
         {
@@ -101,21 +97,20 @@ namespace CustomList
                 }
             }
         }
-        //public void DecreaseIndex();
         public void CheckIndex(int index1)
         {
 
             if (customLists[index1].Equals(default(T)))
-                //{
-                //    try
-                //    {
-                CheckIndex(-1);
-            //    }
-            //    catch (IndexOutOfRangeException)
-            //    {
-            //        Console.WriteLine("Index Out Of Range");
-            //    }
-            //}
+            {
+                try
+                {
+                    CheckIndex(-1);
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Console.WriteLine("Index Out Of Range");
+                }
+            }
         }
         public IEnumerator GetEnumerator()
         {
