@@ -54,6 +54,7 @@
     <Compile Include="RemoveMethodTest.cs" />
     <Compile Include="ToStringMethodTests.cs" />
     <Compile Include="AddingListsToEachOtherTests.cs" />
+    <Compile Include="SubtractingListsFromOneAnotherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

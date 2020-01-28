@@ -150,5 +150,18 @@ namespace CustomList
             }
             return a;
         }
+        public static CustomList<T> operator - (CustomList<T> b, CustomList<T> c)
+        {
+            CustomList<T> a = new CustomList<T>();
+            for(int i = 0; i < b.count; i ++)
+            {
+                a.CustomAdd(b[i]);
+            }
+            for(int i = 0; i < b.count; i++)
+            {
+                a.CustomRemove(c[i]);
+            }
+            return a;
+        }
     }
 }
