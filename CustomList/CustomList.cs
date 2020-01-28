@@ -39,13 +39,13 @@ namespace CustomList
                 if (value.Equals(default(T)))
                 {
                     //try
-                   // {
-                        CheckIndex(-1);
+                    // {
+                    CheckIndex(-1);
                     //}
-                   // catch (IndexOutOfRangeException)
-                   // {
-                   //     Console.WriteLine("Index is out of range please try again");
-                   // }
+                    // catch (IndexOutOfRangeException)
+                    // {
+                    //     Console.WriteLine("Index is out of range please try again");
+                    // }
                 }
                 customLists[index] = value;
             }
@@ -106,10 +106,10 @@ namespace CustomList
         {
 
             if (customLists[index1].Equals(default(T)))
-            //{
-            //    try
-            //    {
-                    CheckIndex(-1);
+                //{
+                //    try
+                //    {
+                CheckIndex(-1);
             //    }
             //    catch (IndexOutOfRangeException)
             //    {
@@ -128,36 +128,36 @@ namespace CustomList
         {
             StringBuilder stringBuilder = new StringBuilder();
             string value;
-            for(int i = 0; i<count; i++)
+            for (int i = 0; i < count; i++)
             {
-                
-              stringBuilder.Append(customLists[i]);
-                
+
+                stringBuilder.Append(customLists[i]);
+
             }
             value = stringBuilder.ToString();
             return value;
         }
-       public static CustomList<T> operator + (CustomList<T> b, CustomList<T> c)
+        public static CustomList<T> operator +(CustomList<T> b, CustomList<T> c)
         {
             CustomList<T> a = new CustomList<T>();
-            for(int i = 0; i < b.count; i++)
+            for (int i = 0; i < b.count; i++)
             {
                 a.CustomAdd(b[i]);
             }
-            for(int i = 0; i < c.count; i++)
+            for (int i = 0; i < c.count; i++)
             {
                 a.CustomAdd(c[i]);
             }
             return a;
         }
-        public static CustomList<T> operator - (CustomList<T> b, CustomList<T> c)
+        public static CustomList<T> operator -(CustomList<T> b, CustomList<T> c)
         {
             CustomList<T> a = new CustomList<T>();
-            for(int i = 0; i < b.count; i ++)
+            for (int i = 0; i < b.count; i++)
             {
                 a.CustomAdd(b[i]);
             }
-            for(int i = 0; i < b.count; i++)
+            for (int i = 0; i < b.count; i++)
             {
                 a.CustomRemove(c[i]);
             }
@@ -165,13 +165,13 @@ namespace CustomList
         }
         public void CustomZip(CustomList<T> a, CustomList<T> b)
         {
-            for(int i = 0; i < a.count; i++)
+            for (int i = 0; i < a.count; i++)
             {
                 CustomAdd(a[i]);
                 for (int j = i; j < b.count; j++)
                 {
-                    CustomAdd(b[j]);
-                    
+                    CustomAdd(b[i]);
+
                     break;
                 }
             }
@@ -185,3 +185,4 @@ namespace CustomList
         }
     }
 }
+
