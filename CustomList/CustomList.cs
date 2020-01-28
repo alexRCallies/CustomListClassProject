@@ -163,5 +163,25 @@ namespace CustomList
             }
             return a;
         }
+        public void CustomZip(CustomList<T> a, CustomList<T> b)
+        {
+            for(int i = 0; i < a.count; i++)
+            {
+                CustomAdd(a[i]);
+                for (int j = i; j < b.count; j++)
+                {
+                    CustomAdd(b[j]);
+                    
+                    break;
+                }
+            }
+            if(b.count > a.count)
+            {
+                for(int k = a.count; k <b.count; k++)
+                {
+                    CustomAdd(b[k]);
+                }
+            }
+        }
     }
 }

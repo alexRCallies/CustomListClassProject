@@ -55,6 +55,7 @@
     <Compile Include="ToStringMethodTests.cs" />
     <Compile Include="AddingListsToEachOtherTests.cs" />
     <Compile Include="SubtractingListsFromOneAnotherTests.cs" />
+    <Compile Include="ZipListsTogetherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
