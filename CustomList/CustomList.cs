@@ -175,9 +175,9 @@ namespace CustomList
                     break;
                 }
             }
-            if(b.count > a.count)
+            if (b.count > a.count)
             {
-                for(int k = a.count; k <b.count; k++)
+                for (int k = a.count; k < b.count; k++)
                 {
                     CustomAdd(b[k]);
                 }
