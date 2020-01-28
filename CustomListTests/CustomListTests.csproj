@@ -55,6 +55,8 @@
     <Compile Include="ToStringMethodTests.cs" />
     <Compile Include="AddingListsToEachOtherTests.cs" />
     <Compile Include="SubtractingListsFromOneAnotherTests.cs" />
+    <Compile Include="SortMehodAscendingTests.cs" />
+    <Compile Include="SortMethodDescendingTests.cs" />
     <Compile Include="ZipListsTogetherTests.cs" />
   </ItemGroup>
   <ItemGroup>

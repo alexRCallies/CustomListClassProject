@@ -178,6 +178,31 @@ namespace CustomList
                 }
             }
         }
+        public string CustomSortAscending()
+        {
+            IEnumerable<T> sortAscending =
+                from T items in customLists
+                orderby items
+                select items;
+            foreach(T items in sortAscending)
+            {
+                return items.ToString();
+            }
+            return customLists.ToString();
+
+        }
+        public string CustomSortDescending()
+        {
+            IEnumerable<T> sortDescending =
+                            from T items in customLists
+                            orderby items descending
+                            select items;
+            foreach (T items in sortDescending)
+            {
+                return items.ToString();
+            }
+            return customLists.ToString();
+        }
     }
 }
 
