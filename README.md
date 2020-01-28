@@ -29,7 +29,7 @@ EXAMPLE
             list.Add(1);
             list.Add(6);
             customList = custom - list;
-           froeach(int numbers in customList)
+           foreach(int numbers in customList)
            {
             Console.WriteLine(numbers);
            }
@@ -37,4 +37,9 @@ OUTPUT
 
 3
 5
+
+
+My algorithm for the sort method i used was an enumerable and the orderBy key word
+which utilizes the default compare feature in descending or ascending order thus making the 
+keyword orderBy.
             
